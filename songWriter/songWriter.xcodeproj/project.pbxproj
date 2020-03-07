@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A777DFC9241399D200A81ACB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFC8241399D200A81ACB /* SecondViewController.swift */; };
+		A777DFCB2413A11B00A81ACB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFCA2413A11B00A81ACB /* DetailViewController.swift */; };
 		A77EB69F241379CA0030729D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB69E241379CA0030729D /* AppDelegate.swift */; };
 		A77EB6A1241379CA0030729D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB6A0241379CA0030729D /* SceneDelegate.swift */; };
 		A77EB6A3241379CA0030729D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB6A2241379CA0030729D /* ViewController.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A777DFC8241399D200A81ACB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A777DFCA2413A11B00A81ACB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A77EB69B241379CA0030729D /* songWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = songWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77EB69E241379CA0030729D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A77EB6A0241379CA0030729D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,12 +86,12 @@
 				A77EB69E241379CA0030729D /* AppDelegate.swift */,
 				A77EB6A0241379CA0030729D /* SceneDelegate.swift */,
 				A77EB6A2241379CA0030729D /* ViewController.swift */,
+				A777DFCA2413A11B00A81ACB /* DetailViewController.swift */,
 				A77EB6A4241379CA0030729D /* Main.storyboard */,
 				A77EB6AA241379CB0030729D /* Assets.xcassets */,
 				A77EB6AC241379CB0030729D /* LaunchScreen.storyboard */,
 				A77EB6AF241379CB0030729D /* Info.plist */,
 				A77EB6A7241379CA0030729D /* songWriter.xcdatamodeld */,
-				A777DFC8241399D200A81ACB /* SecondViewController.swift */,
 			);
 			path = songWriter;
 			sourceTree = "<group>";
@@ -209,7 +209,7 @@
 				A77EB6A3241379CA0030729D /* ViewController.swift in Sources */,
 				A77EB69F241379CA0030729D /* AppDelegate.swift in Sources */,
 				A77EB6A1241379CA0030729D /* SceneDelegate.swift in Sources */,
-				A777DFC9241399D200A81ACB /* SecondViewController.swift in Sources */,
+				A777DFCB2413A11B00A81ACB /* DetailViewController.swift in Sources */,
 				A77EB6A9241379CA0030729D /* songWriter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

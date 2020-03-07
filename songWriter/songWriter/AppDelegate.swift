@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let song = Song(context: persistentContainer.viewContext)
         song.title = title
 //        song.timestamp = timestamp
+//        song.content = ""   //initially have no song content
         song.content = content
         saveContext()
 

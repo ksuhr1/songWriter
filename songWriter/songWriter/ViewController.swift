@@ -8,18 +8,19 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tblView: UITableView!
     var dataSourceArray = [Song]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-        
-     
+    var songTitle: UILabel?
+    var titleTextField: UITextField?
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -39,10 +40,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
+    //new added method from second video
+    //www.youtube.com/watch?v=v0Hx7q26Hoo
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            destination.name = titleTextField!.text
+//       
+//            destination.name = titleTextField?.text
+
+//            destination.song = dataSourceArray[(tblView.indexPathForSelectedRow?.row)!]
+//            tblView.deselectRow(at: tblView.indexPathForSelectedRow!, animated: true)
+        }
+    }
+    
+    
     //added function method
     //UPDATE FUNCTION
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        
+        // different video added code
+//         performSegue(withIdentifier: "showdetail", sender: self)
+        
         
         let song = dataSourceArray[indexPath.row]
         var titleTextField: UITextField?
@@ -61,6 +80,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.appDelegate.updateSong(song: song, title: title!, content: content!)
                     self.fetchAndUpdateTable()
                 }
+                
+               
         })
         
         //Create Cancel button with action handler
@@ -92,13 +113,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSourceArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         let song = dataSourceArray[indexPath.row]
+        
+        if cell ==  nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "songsTable")
+        }
         
         cell?.textLabel?.text = song.title! + " "+song.content!
         return cell!
@@ -112,22 +138,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBAction func addSong(_ sender: UIButton)
     {
-        var titleTextField: UITextField?
-        var contentTextField: UITextField?
+        //var titleTextField: UITextField?
+//        var contentTextField: UITextField?
         
         //Declare AlertMessage
-        let dialogMessage = UIAlertController(title: "Alert Title", message: "Please provide song name and content", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "Alert Title", message: "Please provide song title", preferredStyle: .alert)
         
         //Create OK button with actio nhandler
         let ok = UIAlertAction(title: "OK", style: .default, handler:
             {(action) -> Void in
-                let title = titleTextField?.text
-                let content = contentTextField?.text
+                let title = self.titleTextField?.text
+//                let content = contentTextField?.text
                 
-                if title != nil && content != nil  {
-                    self.appDelegate.insertSong(title: title!, content:content!)
+                
+//                if title != nil && content != nil  {
+//                                   self.appDelegate.insertSong(title: title!, content:content!)
+//                                   self.fetchAndUpdateTable()
+//                               }
+                let content = ""
+                if title != nil {
+                    self.appDelegate.insertSong(title: title!, content:content)
                     self.fetchAndUpdateTable()
+                    self.performSegue(withIdentifier: "showdetail", sender: self)
                 }
+            
+               
                 
 //                let secondVC = SecondViewController(nibName: "Second View", bundle: nil)
 //                let navController = UINavigationController(rootViewController: secondVC)
@@ -147,15 +182,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Add Input TextField to dialog message
         dialogMessage.addTextField { (textField) -> Void in
             
-            titleTextField = textField
-            titleTextField?.placeholder = "Type in your song title"
+            self.titleTextField = textField
+            self.titleTextField?.placeholder = "Type in your song title"
         }
         
-        dialogMessage.addTextField { (texField) -> Void in
-            
-            contentTextField = texField
-            contentTextField?.placeholder = "Write your lyrics"
-        }
+//        dialogMessage.addTextField { (texField) -> Void in
+//
+//            contentTextField = texField
+//            contentTextField?.placeholder = "Write your lyrics"
+//        }
         
         //Present dialog messageee to user
         self.present(dialogMessage, animated: true, completion: nil)
