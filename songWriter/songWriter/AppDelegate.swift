@@ -32,6 +32,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
+    // Katy methods
+    
+    func insertSong(title:String, content:String )
+    {
+        let song = Song(context: persistentContainer.viewContext)
+        song.title = title
+//        song.timestamp = timestamp
+        song.content = content
+        saveContext()
+
+    }
+
+    func fetchSongs() -> [Song]
+    {
+        var arrSong = [Song]()
+        //<> class
+        let  fetchRequest = NSFetchRequest<Song>(entityName: "Song")
+
+        do {
+            try arrSong = persistentContainer.viewContext
+            .fetch(fetchRequest)
+        } catch {
+            print(error)
+        }
+
+        return arrSong
+    }
+
+    func deleteSong(song: Song)
+    {
+        persistentContainer.viewContext.delete(song)
+        saveContext()
+    }
+    
+    func updateSong(song: Song, title: String, content:String)
+    {
+        song.title = title
+        song.content = content
+        saveContext()
+    }
+    
 
     // MARK: - Core Data stack
 
