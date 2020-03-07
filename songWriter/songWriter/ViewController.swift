@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var dataSourceArray = [Song]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var songTitle: UILabel?
     var titleTextField: UITextField?
     
     

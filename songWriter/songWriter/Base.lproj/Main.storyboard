@@ -90,34 +90,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL6-X5-Ir5">
-                                <rect key="frame" x="0.0" y="88" width="414" height="20.5"/>
+                                <rect key="frame" x="0.0" y="88" width="364" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fPq-KF-ob0">
-                                <rect key="frame" x="0.0" y="116.5" width="423" height="745.5"/>
+                                <rect key="frame" x="0.0" y="117" width="423" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OI-Ew-s4P">
+                                <rect key="frame" x="384" y="88" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="initialUpdateSong:" destination="B4U-Nw-g59" eventType="touchUpInside" id="nUR-MF-056"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4OI-Ew-s4P" firstAttribute="top" secondItem="DPR-dT-H71" secondAttribute="top" id="3Nt-6i-j9O"/>
                             <constraint firstItem="fPq-KF-ob0" firstAttribute="leading" secondItem="DPR-dT-H71" secondAttribute="leading" id="5EI-6v-d6O"/>
-                            <constraint firstItem="DPR-dT-H71" firstAttribute="trailing" secondItem="wL6-X5-Ir5" secondAttribute="trailing" id="Fsw-5g-VTY"/>
+                            <constraint firstItem="4OI-Ew-s4P" firstAttribute="trailing" secondItem="DPR-dT-H71" secondAttribute="trailing" id="CDE-nA-USE"/>
+                            <constraint firstItem="DPR-dT-H71" firstAttribute="trailing" secondItem="wL6-X5-Ir5" secondAttribute="trailing" constant="50" id="Fsw-5g-VTY"/>
                             <constraint firstItem="wL6-X5-Ir5" firstAttribute="leading" secondItem="DPR-dT-H71" secondAttribute="leading" id="LKp-zv-x9T"/>
                             <constraint firstItem="fPq-KF-ob0" firstAttribute="top" secondItem="wL6-X5-Ir5" secondAttribute="bottom" constant="8" id="NHd-I4-Tmt"/>
                             <constraint firstItem="fPq-KF-ob0" firstAttribute="bottom" secondItem="DPR-dT-H71" secondAttribute="bottom" id="Wnc-Ml-EvY"/>
+                            <constraint firstItem="wL6-X5-Ir5" firstAttribute="leading" secondItem="DPR-dT-H71" secondAttribute="leading" id="wcb-T8-Nyo"/>
                             <constraint firstAttribute="trailing" secondItem="fPq-KF-ob0" secondAttribute="trailing" constant="-9" id="yaF-cX-iuS"/>
                             <constraint firstItem="wL6-X5-Ir5" firstAttribute="top" secondItem="DPR-dT-H71" secondAttribute="top" id="yoo-Ka-wco"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DPR-dT-H71"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" id="RI1-fE-34z">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QF3-YC-Qma">
+                                <rect key="frame" x="20" y="12" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                            </button>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="nk2-tw-niI"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editBtn" destination="4OI-Ew-s4P" id="oqx-rG-MAO"/>
                         <outlet property="songContent" destination="fPq-KF-ob0" id="s0h-Rw-OcS"/>
                         <outlet property="songTitle" destination="wL6-X5-Ir5" id="5Kh-YW-KX5"/>
                     </connections>

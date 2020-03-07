@@ -76,6 +76,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         saveContext()
     }
     
+    func initialUpdateSong(title: String, content:String)
+       {
+           print("initialUpdateSong")
+           let song = Song(context: persistentContainer.viewContext)
+           song.title = title
+           song.content = content
+           saveContext()
+       }
+    
 
     // MARK: - Core Data stack
 
