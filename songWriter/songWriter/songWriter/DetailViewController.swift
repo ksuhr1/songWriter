@@ -16,20 +16,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var songContent: UITextView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var song: Song?
-    
     var name: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         songTitle.text = name
         songContent.text = "Write your lyrics"
-        
-//        songTitle.text = song?.title
-//        songContent.text = song?.content
-
-        // Do any additional setup after loading the view.
-//        update()
     }
     
     
@@ -40,8 +32,6 @@ class DetailViewController: UIViewController {
         {
             self.appDelegate.initialUpdateSong(title: songTitle.text!, content: content!)
         }
-    
-    
     }
     
      

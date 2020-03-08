@@ -75,6 +75,7 @@
                     <connections>
                         <outlet property="tblView" destination="RyE-gl-TJz" id="pEI-P2-dle"/>
                         <segue destination="B4U-Nw-g59" kind="show" identifier="showdetail" id="3r6-8u-o7A"/>
+                        <segue destination="c3U-vf-TbO" kind="show" identifier="editdetail" id="yg2-CC-8SQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,7 +90,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL6-X5-Ir5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL6-X5-Ir5">
                                 <rect key="frame" x="0.0" y="88" width="364" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -129,7 +130,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="RI1-fE-34z">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QF3-YC-Qma">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QF3-YC-Qma">
                                 <rect key="frame" x="20" y="12" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit"/>
@@ -139,14 +140,81 @@
                     <navigationItem key="navigationItem" id="nk2-tw-niI"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="editBtn" destination="4OI-Ew-s4P" id="oqx-rG-MAO"/>
+                        <outlet property="editBtn" destination="4OI-Ew-s4P" id="5Ey-N8-OYR"/>
                         <outlet property="songContent" destination="fPq-KF-ob0" id="s0h-Rw-OcS"/>
                         <outlet property="songTitle" destination="wL6-X5-Ir5" id="5Kh-YW-KX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUf-Hc-inu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969.56521739130437" y="125.89285714285714"/>
+            <point key="canvasLocation" x="1481" y="-333"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="R9i-O1-OYX">
+            <objects>
+                <viewController id="c3U-vf-TbO" customClass="EditViewController" customModule="songWriter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="djp-v1-TP8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dh3-F3-VM8">
+                                <rect key="frame" x="0.0" y="88" width="364" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="34d-16-9I5">
+                                <rect key="frame" x="0.0" y="117" width="423" height="696"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpg-ZR-MtU">
+                                <rect key="frame" x="384" y="88" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="updateSong:" destination="c3U-vf-TbO" eventType="touchUpInside" id="1uf-Gd-ric"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DzK-UI-vq1" firstAttribute="trailing" secondItem="Dh3-F3-VM8" secondAttribute="trailing" constant="50" id="24w-TJ-qyV"/>
+                            <constraint firstItem="34d-16-9I5" firstAttribute="bottom" secondItem="DzK-UI-vq1" secondAttribute="bottom" id="C6K-cS-iei"/>
+                            <constraint firstItem="34d-16-9I5" firstAttribute="leading" secondItem="DzK-UI-vq1" secondAttribute="leading" id="GFa-WM-e7C"/>
+                            <constraint firstItem="bpg-ZR-MtU" firstAttribute="top" secondItem="DzK-UI-vq1" secondAttribute="top" id="S16-hM-ZK7"/>
+                            <constraint firstItem="bpg-ZR-MtU" firstAttribute="trailing" secondItem="DzK-UI-vq1" secondAttribute="trailing" id="Zxg-fJ-Wkf"/>
+                            <constraint firstAttribute="trailing" secondItem="34d-16-9I5" secondAttribute="trailing" constant="-9" id="bf2-vX-1za"/>
+                            <constraint firstItem="34d-16-9I5" firstAttribute="top" secondItem="Dh3-F3-VM8" secondAttribute="bottom" constant="8" id="dqz-oq-NiI"/>
+                            <constraint firstItem="Dh3-F3-VM8" firstAttribute="leading" secondItem="DzK-UI-vq1" secondAttribute="leading" id="tb0-LY-6hV"/>
+                            <constraint firstItem="Dh3-F3-VM8" firstAttribute="top" secondItem="DzK-UI-vq1" secondAttribute="top" id="xLi-LP-NUg"/>
+                            <constraint firstItem="Dh3-F3-VM8" firstAttribute="leading" secondItem="DzK-UI-vq1" secondAttribute="leading" id="yPC-lT-21c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DzK-UI-vq1"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" id="8rg-FC-Q40">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pCp-Ys-dlM">
+                                <rect key="frame" x="20" y="12" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                            </button>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="u1g-N0-ESB"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editContentView" destination="34d-16-9I5" id="mEJ-kc-4E6"/>
+                        <outlet property="editTitleLabel" destination="Dh3-F3-VM8" id="gGZ-BI-Wmm"/>
+                        <outlet property="updateBtn" destination="bpg-ZR-MtU" id="GBm-JN-IuO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hm7-Nt-OiU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480" y="380"/>
         </scene>
     </scenes>
 </document>

@@ -71,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func updateSong(song: Song, title: String, content:String)
     {
+        print("Updating Song")
         song.title = title
         song.content = content
         saveContext()

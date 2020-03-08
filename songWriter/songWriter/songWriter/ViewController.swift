@@ -42,14 +42,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //new added method from second video
     //www.youtube.com/watch?v=v0Hx7q26Hoo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailViewController {
-            destination.name = titleTextField!.text
+        if segue.identifier == "showdetail"
+        {
+            if let destination = segue.destination as? DetailViewController {
+                destination.name = titleTextField!.text
+            }
+            
+        }
+        if segue.identifier == "editdetail"
+        {
+            print("segue editdetail")
+            if let destination = segue.destination as? EditViewController {
+              destination.song = dataSourceArray[(tblView.indexPathForSelectedRow?.row)!]
+              tblView.deselectRow(at: tblView.indexPathForSelectedRow!, animated: true)
+              self.fetchAndUpdateTable()
+            }
+
+        }
+        
+       
 //       
 //            destination.name = titleTextField?.text
 
 //            destination.song = dataSourceArray[(tblView.indexPathForSelectedRow?.row)!]
 //            tblView.deselectRow(at: tblView.indexPathForSelectedRow!, animated: true)
-        }
+        
     }
     
     
@@ -59,56 +76,56 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         
         // different video added code
-//         performSegue(withIdentifier: "showdetail", sender: self)
+        performSegue(withIdentifier: "editdetail", sender: self)
         
         
-        let song = dataSourceArray[indexPath.row]
-        var titleTextField: UITextField?
-        var contentTextField: UITextField?
-        
-        //Declare AlertMessage
-        let dialogMessage = UIAlertController(title: "Alert Title", message: "Please update song name and content", preferredStyle: .alert)
-        
-        //Create OK button with actio nhandler
-        let ok = UIAlertAction(title: "Update", style: .default, handler:
-            {(action) -> Void in
-                let title = titleTextField?.text
-                let content = contentTextField?.text
-                
-                if title != nil && content != nil  {
-                    self.appDelegate.updateSong(song: song, title: title!, content: content!)
-                    self.fetchAndUpdateTable()
-                }
-                
-               
-        })
-        
-        //Create Cancel button with action handler
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            print("Cancel button tapped")
-        }
-        //Add OK and Cancel button to dialog message
-        dialogMessage.addAction(ok)
-        dialogMessage.addAction(cancel)
-        
-        //Add Input TextField to dialog message
-        dialogMessage.addTextField { (textField) -> Void in
-            
-            titleTextField = textField
-            titleTextField?.placeholder = "Type in your song title"
-            titleTextField?.text = song.title
-            
-        }
-        
-        dialogMessage.addTextField { (texField) -> Void in
-            
-            contentTextField = texField
-            contentTextField?.placeholder = "Write your lyrics"
-            contentTextField?.text = song.content
-        }
-        
-        //Present dialog messageee to user
-        self.present(dialogMessage, animated: true, completion: nil)
+//        let song = dataSourceArray[indexPath.row]
+//        var titleTextField: UITextField?
+//        var contentTextField: UITextField?
+//        
+//        //Declare AlertMessage
+//        let dialogMessage = UIAlertController(title: "Alert Title", message: "Please update song name and content", preferredStyle: .alert)
+//        
+//        //Create OK button with actio nhandler
+//        let ok = UIAlertAction(title: "Update", style: .default, handler:
+//            {(action) -> Void in
+//                let title = titleTextField?.text
+//                let content = contentTextField?.text
+//                
+//                if title != nil && content != nil  {
+//                    self.appDelegate.updateSong(song: song, title: title!, content: content!)
+//                    self.fetchAndUpdateTable()
+//                }
+//                
+//               
+//        })
+//        
+//        //Create Cancel button with action handler
+//        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+//            print("Cancel button tapped")
+//        }
+//        //Add OK and Cancel button to dialog message
+//        dialogMessage.addAction(ok)
+//        dialogMessage.addAction(cancel)
+//        
+//        //Add Input TextField to dialog message
+//        dialogMessage.addTextField { (textField) -> Void in
+//            
+//            titleTextField = textField
+//            titleTextField?.placeholder = "Type in your song title"
+//            titleTextField?.text = song.title
+//            
+//        }
+//        
+//        dialogMessage.addTextField { (texField) -> Void in
+//            
+//            contentTextField = texField
+//            contentTextField?.placeholder = "Write your lyrics"
+//            contentTextField?.text = song.content
+//        }
+//        
+//        //Present dialog messageee to user
+//        self.present(dialogMessage, animated: true, completion: nil)
         
     }
     
