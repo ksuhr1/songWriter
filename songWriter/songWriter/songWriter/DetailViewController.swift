@@ -22,6 +22,7 @@ class DetailViewController: UIViewController , UITextFieldDelegate{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var name: String?
+    var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -38,7 +39,7 @@ class DetailViewController: UIViewController , UITextFieldDelegate{
         
         let contentTapGesture = UITapGestureRecognizer(target: self, action: #selector(lablTapped(recognizer:)))
         contentTapGesture.numberOfTapsRequired = 2
-        songContent.addGestureRecognizer(contentTapGesture)
+//        songContent.addGestureRecognizer(contentTapGesture)
         
     }
     
@@ -61,16 +62,30 @@ class DetailViewController: UIViewController , UITextFieldDelegate{
     
     
     @IBAction func initialUpdateSong(_ sender: UIButton) {
-        textFieldShouldReturn(editTitle)
+//        textFieldShouldReturn(editTitle)
         songContent.tintColor = UIColor.clear
         print("Wanting to add content to song")
+    
         let content = songContent?.text
         let title = songTitle?.text
-        if title != nil && content != nil
+        if count == 0
         {
-            self.appDelegate.initialUpdateSong(title: title!, content: content!)
+            if title != nil && content != nil
+            {
+                self.appDelegate.insertSong(title: title!, content:content!)
+    //            self.appDelegate.initialUpdateSong(title: title!, content: content!)
+            }
+            
         }
-       
+        else
+        {
+            // if title != nil && content != nil
+//                    {
+//            //            self.appDelegate.initialUpdateSong(title: title!, content: content!)
+//                    }
+            
+        }
+      
     }
     
      

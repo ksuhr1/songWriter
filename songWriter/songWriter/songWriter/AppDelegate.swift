@@ -76,13 +76,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initialUpdateSong(title: String, content:String)
-       {
-           print("initialUpdateSong")
-           let song = Song(context: persistentContainer.viewContext)
-           song.title = title
-           song.content = content
-           saveContext()
-       }
+    {
+        print("initialUpdateSong")
+        let song = Song(context: persistentContainer.viewContext)
+        song.title = title
+        song.content = content
+        saveContext()
+
+        let arrsongs  = fetchSongs()
+        for item in arrsongs
+        {
+            print(item)
+        }
+              
+    }
     
 
     // MARK: - Core Data stack

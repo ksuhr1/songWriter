@@ -42,13 +42,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //new added method from second video
     //www.youtube.com/watch?v=v0Hx7q26Hoo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showdetail"
-        {
-            if let destination = segue.destination as? DetailViewController {
-                destination.name = titleTextField!.text
-            }
-            
-        }
+//        if segue.identifier == "showdetail"
+//        {
+//            if let destination = segue.destination as? DetailViewController {
+//                destination.name = titleTextField!.text
+//            }
+//            
+//        }
         if segue.identifier == "editdetail"
         {
             print("segue editdetail")
@@ -154,9 +154,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBAction func addSong(_ sender: UIButton)
     {
-        //var titleTextField: UITextField?
-//        var contentTextField: UITextField?
-        
         //Declare AlertMessage
         let dialogMessage = UIAlertController(title: "Alert Title", message: "Please provide song title", preferredStyle: .alert)
         
@@ -164,25 +161,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let ok = UIAlertAction(title: "OK", style: .default, handler:
             {(action) -> Void in
                 let title = self.titleTextField?.text
-//                let content = contentTextField?.text
-                
-                
-//                if title != nil && content != nil  {
-//                                   self.appDelegate.insertSong(title: title!, content:content!)
-//                                   self.fetchAndUpdateTable()
-//                               }
+
                 let content = ""
-                if title != nil {
-                    self.appDelegate.insertSong(title: title!, content:content)
-                    self.fetchAndUpdateTable()
-                    self.performSegue(withIdentifier: "showdetail", sender: self)
+                if title != nil && content != nil
+                {
+                   self.appDelegate.insertSong(title: title!, content:content)
+                   self.fetchAndUpdateTable()
                 }
-            
-               
-                
-//                let secondVC = SecondViewController(nibName: "Second View", bundle: nil)
-//                let navController = UINavigationController(rootViewController: secondVC)
-//                self.present(navController, animated: true, completion: nil)
         })
         
         //Create Cancel button with action handler
@@ -193,7 +178,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Add OK and Cancel button to dialog message
         dialogMessage.addAction(ok)
         dialogMessage.addAction(cancel)
-//        present(dialogMessage, animated:true, completion:nil)
         
         //Add Input TextField to dialog message
         dialogMessage.addTextField { (textField) -> Void in
@@ -201,13 +185,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.titleTextField = textField
             self.titleTextField?.placeholder = "Type in your song title"
         }
-        
-//        dialogMessage.addTextField { (texField) -> Void in
-//
-//            contentTextField = texField
-//            contentTextField?.placeholder = "Write your lyrics"
-//        }
-        
+
         //Present dialog messageee to user
         self.present(dialogMessage, animated: true, completion: nil)
         

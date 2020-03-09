@@ -8,34 +8,69 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController,  UITextFieldDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
        
 
     @IBOutlet weak var updateBtn: UIButton!
     @IBOutlet weak var editTitleLabel: UILabel!
     @IBOutlet weak var editContentView: UITextView!
-    
+    @IBOutlet weak var editTxtF: UITextField!
     var song: Song?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        editTitleLabel.text = song?.title
+        editTitleLabel.text = song?.title   //label
         editContentView.text = song?.content
+        editContentView.isEditable = false
+        
+        
+
+        editTxtF.delegate = self
+        editTxtF.isHidden =  true
+        editTitleLabel.isUserInteractionEnabled =  true
+        let contentTapGesture = UITapGestureRecognizer(target: self, action: #selector(lablTapped(recognizer:)))
+        contentTapGesture.numberOfTapsRequired =   2
+        editContentView.addGestureRecognizer(contentTapGesture)
+        
+        
         
     }
     
+    @objc func lablTapped (recognizer: UITapGestureRecognizer)
+    {
+        editTitleLabel.isHidden = true
+        editTxtF.isHidden = false
+        editTxtF.text = editTitleLabel.text
+        
+        editContentView.isEditable = true
+        editContentView.isSelectable = true
+        
+        editContentView.tintColor = UIColor.systemBlue
+        editContentView.endFloatingCursor()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          editTxtF.isHidden = true
+          editTitleLabel.isHidden = false
+          editTitleLabel.text = editTxtF.text
+          return true
+      }
+    
     @IBAction func updateSong(_ sender: Any) {
         print("Updating song")
+        textFieldShouldReturn(editTxtF)
         let songTitle = editTitleLabel?.text
         let content = editContentView?.text
         if song != nil && content != nil
         {
             self.appDelegate.updateSong(song: song!, title: songTitle!, content: content!)
+            editContentView.tintColor = UIColor.clear
         }
+            
+        
+       
     
     }
     
