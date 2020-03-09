@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A777DFCB2413A11B00A81ACB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFCA2413A11B00A81ACB /* DetailViewController.swift */; };
 		A777DFCF24149B6500A81ACB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFCE24149B6500A81ACB /* EditViewController.swift */; };
 		A777DFD12415DE6B00A81ACB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFD02415DE6B00A81ACB /* Constants.swift */; };
 		A777DFD32415DF3300A81ACB /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFD22415DF3300A81ACB /* EditButton.swift */; };
@@ -32,7 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A777DFCA2413A11B00A81ACB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A777DFCE24149B6500A81ACB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		A777DFD02415DE6B00A81ACB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A777DFD22415DF3300A81ACB /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 				A77EB69E241379CA0030729D /* AppDelegate.swift */,
 				A77EB6A0241379CA0030729D /* SceneDelegate.swift */,
 				A77EB6A2241379CA0030729D /* ViewController.swift */,
-				A777DFCA2413A11B00A81ACB /* DetailViewController.swift */,
 				A77EB6A4241379CA0030729D /* Main.storyboard */,
 				A77EB6AA241379CB0030729D /* Assets.xcassets */,
 				A77EB6AC241379CB0030729D /* LaunchScreen.storyboard */,
@@ -221,7 +218,6 @@
 				A77EB6A1241379CA0030729D /* SceneDelegate.swift in Sources */,
 				A777DFD12415DE6B00A81ACB /* Constants.swift in Sources */,
 				A777DFD32415DF3300A81ACB /* EditButton.swift in Sources */,
-				A777DFCB2413A11B00A81ACB /* DetailViewController.swift in Sources */,
 				A77EB6A9241379CA0030729D /* songWriter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

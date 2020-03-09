@@ -21,10 +21,9 @@ class EditButton: UIButton {
     }
     
     func initButton(){
-        layer.borderWidth  = 2.0
-        layer.borderColor = Colors.twitterBlue.cgColor
-        layer.cornerRadius = frame.size.height/2
-        setTitleColor(Colors.twitterBlue, for: .normal)
+        layer.borderWidth  = 1.0
+        layer.borderColor = Colors.black.cgColor
+//        layer.cornerRadius = frame.size.height
         addTarget(self, action: #selector(EditButton.buttonPressed), for: .touchUpInside)
         
     }
@@ -36,13 +35,7 @@ class EditButton: UIButton {
     
     func activateButton(bool:Bool) {
         isOn = bool
-        
-        let color = bool ? Colors.twitterBlue  :.clear
-        let title = bool ? "Save": "Save"
-        let titleColor = bool  ? . white: Colors.twitterBlue
-        
-        setTitle(title, for: .normal)
-        setTitleColor(titleColor, for: .normal)
+        let color = bool ? Colors.darkerGreen :.clear
         backgroundColor = color
         
     }

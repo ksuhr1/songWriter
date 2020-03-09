@@ -11,6 +11,8 @@ import Foundation
 
 struct Colors {
     static let twitterBlue = UIColor(red:29.0/255.0, green: 161.0/255.0, blue: 242.0/255.0, alpha:1.0)
+    static let black = UIColor.black
+    static let darkerGreen = UIColor(red: 76.0/255.0, green: 152.0/255.0, blue: 120.0/255.0, alpha: 1.0)
 }
 
 

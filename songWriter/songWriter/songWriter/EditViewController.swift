@@ -33,10 +33,14 @@ class EditViewController: UIViewController,  UITextFieldDelegate {
         let contentTapGesture = UITapGestureRecognizer(target: self, action: #selector(lablTapped(recognizer:)))
         contentTapGesture.numberOfTapsRequired =   2
         editContentView.addGestureRecognizer(contentTapGesture)
+
         
         
         
     }
+    
+    
+     
     
 
     @objc func lablTapped (recognizer: UITapGestureRecognizer)
