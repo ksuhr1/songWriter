@@ -62,7 +62,8 @@ class DetailViewController: UIViewController , UITextFieldDelegate{
     
     
     @IBAction func initialUpdateSong(_ sender: UIButton) {
-//        textFieldShouldReturn(editTitle)
+        
+
         songContent.tintColor = UIColor.clear
         print("Wanting to add content to song")
     

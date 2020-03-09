@@ -32,7 +32,6 @@ class EditButton: UIButton {
     @objc func buttonPressed(){
         activateButton(bool: !isOn)
         
-        
     }
     
     func activateButton(bool:Bool) {

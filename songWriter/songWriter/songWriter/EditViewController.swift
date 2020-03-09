@@ -17,6 +17,7 @@ class EditViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var editContentView: UITextView!
     @IBOutlet weak var editTxtF: UITextField!
     var song: Song?
+    var isOn = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class EditViewController: UIViewController,  UITextFieldDelegate {
         
     }
     
+
     @objc func lablTapped (recognizer: UITapGestureRecognizer)
     {
         editTitleLabel.isHidden = true
@@ -48,6 +50,7 @@ class EditViewController: UIViewController,  UITextFieldDelegate {
         
         editContentView.tintColor = UIColor.systemBlue
         editContentView.endFloatingCursor()
+        isOn = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -60,14 +63,31 @@ class EditViewController: UIViewController,  UITextFieldDelegate {
     
     @IBAction func updateSong(_ sender: Any) {
         print("Updating song")
-        textFieldShouldReturn(editTxtF)
-        let songTitle = editTitleLabel?.text
-        let content = editContentView?.text
-        if song != nil && content != nil
+        if isOn == true
         {
-            self.appDelegate.updateSong(song: song!, title: songTitle!, content: content!)
-            editContentView.tintColor = UIColor.clear
+            textFieldShouldReturn(editTxtF)
+            let songTitle = editTitleLabel?.text
+            let content = editContentView?.text
+            if song != nil && content != nil
+            {
+                self.appDelegate.updateSong(song: song!, title: songTitle!, content: content!)
+                editContentView.tintColor = UIColor.clear
+            }
         }
+        else{
+           let songTitle = editTitleLabel?.text
+           let content = editContentView?.text
+           if song != nil && content != nil
+           {
+               self.appDelegate.updateSong(song: song!, title: songTitle!, content: content!)
+               editContentView.tintColor = UIColor.clear
+           }
+            
+        }
+    
+           
+  
+     
             
         
        

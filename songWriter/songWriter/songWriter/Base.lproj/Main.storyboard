@@ -225,7 +225,6 @@
                         <outlet property="editContentView" destination="34d-16-9I5" id="mEJ-kc-4E6"/>
                         <outlet property="editTitleLabel" destination="Dh3-F3-VM8" id="gGZ-BI-Wmm"/>
                         <outlet property="editTxtF" destination="WTx-Qt-iAc" id="BLP-dm-wYX"/>
-                        <outlet property="updateBtn" destination="bpg-ZR-MtU" id="GBm-JN-IuO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hm7-Nt-OiU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
