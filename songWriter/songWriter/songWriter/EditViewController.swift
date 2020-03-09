@@ -11,11 +11,13 @@ import UIKit
 class EditViewController: UIViewController,  UITextFieldDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
        
-
-    @IBOutlet weak var updateBtn: UIButton!
+    @IBOutlet weak var editBtn: EditButton!
     @IBOutlet weak var editTitleLabel: UILabel!
     @IBOutlet weak var editContentView: UITextView!
     @IBOutlet weak var editTxtF: UITextField!
+    let fullCheck = UIImage(named:"fullCheck") as UIImage?
+    let emptyCheck = UIImage(named:"emptyCheck") as UIImage?
+    
     var song: Song?
     var isOn = false
 
@@ -33,16 +35,8 @@ class EditViewController: UIViewController,  UITextFieldDelegate {
         let contentTapGesture = UITapGestureRecognizer(target: self, action: #selector(lablTapped(recognizer:)))
         contentTapGesture.numberOfTapsRequired =   2
         editContentView.addGestureRecognizer(contentTapGesture)
-
-        
-        
-        
     }
     
-    
-     
-    
-
     @objc func lablTapped (recognizer: UITapGestureRecognizer)
     {
         editTitleLabel.isHidden = true
@@ -54,6 +48,7 @@ class EditViewController: UIViewController,  UITextFieldDelegate {
         
         editContentView.tintColor = UIColor.systemBlue
         editContentView.endFloatingCursor()
+        editBtn.setImage(emptyCheck, for: .normal)
         isOn = true
     }
     
