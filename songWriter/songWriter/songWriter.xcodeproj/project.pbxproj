@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A777DFCB2413A11B00A81ACB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFCA2413A11B00A81ACB /* DetailViewController.swift */; };
 		A777DFCF24149B6500A81ACB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFCE24149B6500A81ACB /* EditViewController.swift */; };
+		A777DFD12415DE6B00A81ACB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFD02415DE6B00A81ACB /* Constants.swift */; };
+		A777DFD32415DF3300A81ACB /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DFD22415DF3300A81ACB /* EditButton.swift */; };
 		A77EB69F241379CA0030729D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB69E241379CA0030729D /* AppDelegate.swift */; };
 		A77EB6A1241379CA0030729D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB6A0241379CA0030729D /* SceneDelegate.swift */; };
 		A77EB6A3241379CA0030729D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB6A2241379CA0030729D /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		A777DFCA2413A11B00A81ACB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A777DFCE24149B6500A81ACB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		A777DFD02415DE6B00A81ACB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A777DFD22415DF3300A81ACB /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
 		A77EB69B241379CA0030729D /* songWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = songWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77EB69E241379CA0030729D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A77EB6A0241379CA0030729D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				A77EB6AF241379CB0030729D /* Info.plist */,
 				A77EB6A7241379CA0030729D /* songWriter.xcdatamodeld */,
 				A777DFCE24149B6500A81ACB /* EditViewController.swift */,
+				A777DFD02415DE6B00A81ACB /* Constants.swift */,
+				A777DFD22415DF3300A81ACB /* EditButton.swift */,
 			);
 			path = songWriter;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 				A77EB69F241379CA0030729D /* AppDelegate.swift in Sources */,
 				A777DFCF24149B6500A81ACB /* EditViewController.swift in Sources */,
 				A77EB6A1241379CA0030729D /* SceneDelegate.swift in Sources */,
+				A777DFD12415DE6B00A81ACB /* Constants.swift in Sources */,
+				A777DFD32415DF3300A81ACB /* EditButton.swift in Sources */,
 				A777DFCB2413A11B00A81ACB /* DetailViewController.swift in Sources */,
 				A77EB6A9241379CA0030729D /* songWriter.xcdatamodeld in Sources */,
 			);

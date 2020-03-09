@@ -15,18 +15,17 @@ class EditViewController: UIViewController {
     @IBOutlet weak var updateBtn: UIButton!
     @IBOutlet weak var editTitleLabel: UILabel!
     @IBOutlet weak var editContentView: UITextView!
+    
     var song: Song?
-     
-       
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         editTitleLabel.text = song?.title
         editContentView.text = song?.content
-
-
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func updateSong(_ sender: Any) {

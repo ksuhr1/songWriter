@@ -8,30 +8,69 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController , UITextFieldDelegate{
     
   
+  
     @IBOutlet weak var editBtn: UIButton!
+    
     @IBOutlet weak var songTitle: UILabel!
+    @IBOutlet weak var editTitle: UITextField!
+    
     @IBOutlet weak var songContent: UITextView!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var name: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
         songTitle.text = name
-        songContent.text = "Write your lyrics"
+        songContent.text = ""
+        
+        editTitle.delegate = self
+        editTitle.isHidden = true
+        songTitle.isUserInteractionEnabled = true
+//        let titleTapGesture = UITapGestureRecognizer(target: self, action: #selector(lablTapped(recognizer:)))
+//        titleTapGesture.numberOfTapsRequired = 1
+//        songTitle.addGestureRecognizer(titleTapGesture)
+        
+        let contentTapGesture = UITapGestureRecognizer(target: self, action: #selector(lablTapped(recognizer:)))
+        contentTapGesture.numberOfTapsRequired = 2
+        songContent.addGestureRecognizer(contentTapGesture)
+        
+    }
+    
+    @objc func lablTapped (recognizer: UITapGestureRecognizer)
+    {
+        print("labelIsTapped")
+        
+        songTitle.isHidden = true
+        editTitle.isHidden = false
+        editTitle.text = songTitle.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        editTitle.isHidden = true
+        songTitle.isHidden = false
+        songTitle.text = editTitle.text
+        return true
     }
     
     
     @IBAction func initialUpdateSong(_ sender: UIButton) {
+        textFieldShouldReturn(editTitle)
+        songContent.tintColor = UIColor.clear
         print("Wanting to add content to song")
         let content = songContent?.text
-        if content != nil
+        let title = songTitle?.text
+        if title != nil && content != nil
         {
-            self.appDelegate.initialUpdateSong(title: songTitle.text!, content: content!)
+            self.appDelegate.initialUpdateSong(title: title!, content: content!)
         }
+       
     }
     
      
